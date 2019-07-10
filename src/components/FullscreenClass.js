@@ -2,10 +2,10 @@ import React, { createRef } from 'react'
 import './Thumb.css'
 
 class FullScreenClass extends React.Component {
- // 1 reference and state
+ // 1 ref and state
  constructor(props) {
    super(props)
-   this.ref = props.noRef ? null : createRef()
+   this.ref = props.app ? null : createRef()
 
    this.state = {
      fullScreen: this.isFullScreen() 
@@ -85,7 +85,7 @@ class FullScreenClass extends React.Component {
       ref={this.ref} 
       className={'Thumb'}
       onClick={this.handleToggle}>
-      {this.props.caption} : { this.state.fullScreen ? 'Opened' : 'Closed' }
+      {this.props.caption} { this.state.fullScreen ? '😮' : '😐' }
     </button>
   }
 

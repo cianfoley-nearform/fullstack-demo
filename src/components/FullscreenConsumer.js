@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import FullScreenContext from './Context'
+import FullScreenContext from '../Context'
 
 export default function Consumer () {
   const {fullScreen, toggle} = useContext(FullScreenContext)
