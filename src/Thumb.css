@@ -1,0 +1,8 @@
+.Thumb {
+  margin: 5px 5px 0 0;
+  min-width: 120px;
+  height: 40px;
+  background-color: lightgoldenrodyellow;
+  font-size: 2vw;
+  border: solid 1px black;
+}
