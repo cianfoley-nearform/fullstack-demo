@@ -11,8 +11,6 @@ export default function DragNDrop () {
     const q1 = useDrop({ type: 'text', data: null })
     const q2 = useDrop({ type: 'text', data: null })
     const q3 = useDrop({ type: 'text', data: null })
-
-    const empty = '🗅';
     
     useEffect(()=>{
         // post results to a server or whatever...
@@ -26,21 +24,21 @@ export default function DragNDrop () {
           <span {...ok}>{ok.data} </span>
           <span {...happy}>{happy.data} </span>
           <span {...angry}>{angry.data} </span>
-          <span>(drag emoji to answer...)</span>
+          <span>(<em>hint: drag emojis to boxes...</em>)</span>
 
           <ul>
             <li {...q1} style={q1.over ? { color: 'yellow' } : null}>
-              How are you today? {q1.data || empty}
+              How are you today? {q1.data || '🗅'}
             </li>
             <li {...q2} style={q2.over ? { color: 'yellow' } : null}>
-              How do you feel about React Hooks? {q2.data || empty}
+              Do you like React Browser Hooks? {q2.data || '🗅'}
             </li>
             <li {...q3} style={q3.over ? { color: 'yellow' } : null}>
-              Go on, give us a smile? {q3.data || empty}
+              How about this demo??? {q3.data || '🗅'}
             </li>
           </ul>
 
-          {q1.data && q2.data && q3.data && '🙏Tanx a mill 🙏'}
+          {q1.data && q2.data && q3.data && '🤘FullStack London Rocks 🤘 Tanx a mill 🙏🙏🙏'}
         </div> 
         <JSONPretty json={{ sad }} />
         <JSONPretty json={{ q1 }} />
