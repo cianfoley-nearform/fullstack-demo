@@ -20,28 +20,31 @@ export default function DragNDrop () {
     return ( 
       <>
         <div style={{fontSize: '24px'}}>
-          <span {...sad}>{sad.data} </span>
-          <span {...ok}>{ok.data} </span>
-          <span {...happy}>{happy.data} </span>
-          <span {...angry}>{angry.data} </span>
+
+          <span {...sad}> {sad.data} </span>
+          <span {...ok}> {ok.data} </span>
+          <span {...happy}> {happy.data} </span>
+          <span {...angry}> {angry.data} </span>
           <span>(<em>hint: drag emojis to boxes...</em>)</span>
 
           <ul>
             <li {...q1} style={q1.over ? { color: 'yellow' } : null}>
-              How are you today? {q1.data || '🗅'}
+              How are you feeling? {q1.data || '🗅'}
             </li>
             <li {...q2} style={q2.over ? { color: 'yellow' } : null}>
-              Do you like React Browser Hooks? {q2.data || '🗅'}
+              Do you like hooks? {q2.data || '🗅'}
             </li>
             <li {...q3} style={q3.over ? { color: 'yellow' } : null}>
-              How about this demo??? {q3.data || '🗅'}
+              How about FullStack? {q3.data || '🗅'}
             </li>
           </ul>
 
-          {q1.data && q2.data && q3.data && '🤘FullStack London Rocks 🤘 Tanx a mill 🙏🙏🙏'}
+          <h1>
+            {q1.data && q2.data && q3.data && '🤘FullStack London Rocks 🤘 Tanx a mill 🙏🙏🙏'}
+          </h1>
+
         </div> 
-        <JSONPretty json={{ sad }} />
-        <JSONPretty json={{ q1 }} />
+        <JSONPretty json={{ sad: { dragging: sad.dragging }, q1: { over: q1.over, data: q1.data } }} />
       </>
     )
   }

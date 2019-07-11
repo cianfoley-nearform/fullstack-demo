@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FullScreenButton  from './components/FullscreenButton';
 import FullScreenImage  from './components/FullscreenImage';
 import FullScreenClass  from './components/FullscreenClass';
+import FullScreenFunctional  from './components/FullscreenFunctional';
 import { useFullScreen } from './custom_hooks/fullScreenHook';
 import FullScreenContext from './Context'
 import FullScreenConsumer from './components/FullscreenConsumer'
@@ -31,9 +32,11 @@ export default function App () {
         <FullScreenClass caption='Me' />
         <FullScreenClass caption='App' app/>
         
-        <h2>Hooks Examples</h2>
-        <FullScreenImage src={fullStack} alt='' />
+        <h2>Hooks Functional Examples</h2>
         <FullScreenButton />
+        <FullScreenImage src={fullStack} alt='' />
+        <FullScreenFunctional caption='Me' />
+        <FullScreenFunctional caption='App' app/>
 
         <h2>Heap Snapshot Test</h2>
         <input type='text' onChange={handleChange} value={numItems} />
@@ -45,7 +48,6 @@ export default function App () {
 
         <h1 style={{marginTop: '100px'}}>DragNDrop Hooks</h1>
         <DragNDrop/>
-
       </div>
     </FullScreenContext.Provider>
   );

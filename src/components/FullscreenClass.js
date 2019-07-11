@@ -48,9 +48,7 @@ class FullScreenClass extends React.Component {
 
  // 6. handle the change
  handleFullscreenChange = () => {
-   const fullScreen = this.isFullScreen()
-
-   this.setState ({fullScreen})
+   this.setState ({fullScreen: this.isFullScreen()})
  }
 
  // 4 - request and exit, still not there
@@ -81,10 +79,8 @@ class FullScreenClass extends React.Component {
 
   // 3 render, note ref and use of state, then handle toggle
   render () { 
-    return <button 
-      ref={this.ref} 
-      className={'Thumb'}
-      onClick={this.handleToggle}>
+    const { ref, handleToggle} = this
+    return <button ref={ref} onClick={handleToggle} className='Thumb'>
       {this.props.caption} { this.state.fullScreen ? '😮' : '😐' }
     </button>
   }

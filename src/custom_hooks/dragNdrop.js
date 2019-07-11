@@ -9,8 +9,8 @@ function useDrag (options) {
     setDragging('true')
   }
 
-  function onDragEnd () { 
-    setDragging(null) 
+  function onDragEnd () {
+    setDragging(null)
   }
 
   return { draggable: true, onDragStart, onDragEnd, dragging, type, data }

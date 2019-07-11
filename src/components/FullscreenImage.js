@@ -1,5 +1,4 @@
 import React from 'react'
-import './Thumb.css'
 import { useFullScreen } from '../custom_hooks/fullScreenHook'
 
 export default function FullScreenImage ({src, alt}) {
