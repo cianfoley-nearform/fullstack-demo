@@ -1,3 +1,7 @@
+# FullStack London 2019 Fullscreen Demo Gists
+
+This is just a gist for FullStack London 2019 showing how components can be stripped down with react hooks.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

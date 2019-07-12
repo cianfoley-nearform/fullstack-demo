@@ -8,13 +8,14 @@ export default function DragNDrop () {
     const happy = useDrag({ type: 'text', data: '😃'  })
     const angry = useDrag({ type: 'text', data: '😡'  })
     
-    const q1 = useDrop({ type: 'text', data: null })
-    const q2 = useDrop({ type: 'text', data: null })
-    const q3 = useDrop({ type: 'text', data: null })
+    const q1 = useDrop({ type: 'text' })
+    const q2 = useDrop({ type: 'text' })
+    const q3 = useDrop({ type: 'text' })
     
     useEffect(()=>{
         // post results to a server or whatever...
-        q1.data && q2.data && q3.data && console.log('Send Results:', [q1.data, q2.data, q3.data])
+        q1.data && q2.data && q3.data && 
+        console.log('Send Results:', [q1.data, q2.data, q3.data])
     }, [q1.data, q2.data, q3.data])
 
     return ( 
@@ -32,10 +33,10 @@ export default function DragNDrop () {
               How are you feeling? {q1.data || '🗅'}
             </li>
             <li {...q2} style={q2.over ? { color: 'yellow' } : null}>
-              Do you like hooks? {q2.data || '🗅'}
+              What do you think of react browser hooks? {q2.data || '🗅'}
             </li>
             <li {...q3} style={q3.over ? { color: 'yellow' } : null}>
-              How about FullStack? {q3.data || '🗅'}
+              How about FullStack London 2019? {q3.data || '🗅'}
             </li>
           </ul>
 
@@ -44,7 +45,15 @@ export default function DragNDrop () {
           </h1>
 
         </div> 
-        <JSONPretty json={{ sad: { dragging: sad.dragging }, q1: { over: q1.over, data: q1.data } }} />
+        <JSONPretty json={{ 
+            sad: sad.dragging ? 'dragging' : null, 
+            ok: ok.dragging ? 'dragging' : null,  
+            happy: happy.dragging ? 'dragging' : null,  
+            angry: angry.dragging ? 'dragging' : null, 
+            q1: `${q1.over ? 'over' : q1.data}`,
+            q2: `${q2.over ? 'over' : q2.data}`,
+            q3: `${q3.over ? 'over' : q3.data}`
+        }} />
       </>
     )
   }

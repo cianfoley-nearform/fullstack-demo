@@ -29,14 +29,14 @@ export default function App () {
         <h1>Fullscreen Demo</h1>
 
         <h2>Class Component</h2>
-        <FullScreenClass caption='Me' />
-        <FullScreenClass caption='App' app/>
+        <FullScreenClass caption='FullScreen Me' />
+        <FullScreenClass caption='FullScreen App' app/>
         
         <h2>Hooks Functional Examples</h2>
         <FullScreenButton />
         <FullScreenImage src={fullStack} alt='' />
-        <FullScreenFunctional caption='Me' />
-        <FullScreenFunctional caption='App' app/>
+        <FullScreenFunctional caption='FullScreen Me' />
+        <FullScreenFunctional caption='FullScreen App' app/>
 
         <h2>Heap Snapshot Test</h2>
         <input type='text' onChange={handleChange} value={numItems} />
